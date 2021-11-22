@@ -1,0 +1,21 @@
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if user.is_authenticated %}
+    Hello, {{ user.username }}.
+    <a href="/signOut">
+        <button type="submit" class="btn btn-secondary">Sign out</button>
+    </a>
+{% else %}
+    <a href="/login">
+        <button type="submit" class="btn btn-secondary">Login</button>
+    </a>
+    <a href="/register">
+        <button type="submit" class="btn btn-secondary">Register</button>
+    </a>
+{% endif %}
