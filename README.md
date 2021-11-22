@@ -61,7 +61,7 @@
 
 ## Connect to Django Project
 * Django is running on http://localhost:8000
-* There are 3 users that are already created an can be used to log in:
+* There are 3 users that are already created and can be used to log in:
 * username ***admin*** and password ***password***
 * username ***alice*** and password ***1234***
 * username ***bob*** and password ***4321***
