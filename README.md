@@ -1,4 +1,4 @@
-# SQL Injection
+# Authentication 1: Passwords and Session IDs
 
 ## Set up Docker environment
 ### Install git
@@ -61,13 +61,8 @@
 
 ## Connect to Django Project
 * Django is running on http://localhost:8000
-* There is a simple login interface
-* There are 3 users that can be used to log in:
+* There are 3 users that are already created an can be used to log in:
 * username ***admin*** and password ***password***
 * username ***alice*** and password ***1234***
 * username ***bob*** and password ***4321***
 
-## SQL Injection
-* This login system is protected against SQL injection.
-* A sql-injection like the following will not work: username ***[anything]' OR 1 = 1 --*** and ***[anything]*** as password
-* e.g. username ***alex' OR 1 = 1 --*** and ***123*** as password
