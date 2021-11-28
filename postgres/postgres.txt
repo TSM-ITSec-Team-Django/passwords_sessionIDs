@@ -1,0 +1,14 @@
+Connect to postgres via attached shell:
+    psql -U postgres
+
+List databases:
+    \l
+
+View all tables:
+    \dt
+
+Describe the table:
+    \d [table]
+
+Get all froma a table:
+    SELECT * FROM [table];

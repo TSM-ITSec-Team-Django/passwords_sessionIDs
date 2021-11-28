@@ -17,7 +17,7 @@ def login_user(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        if user is not None:
+        if user is not None:  # The backend authenticated the credentials
             login(request, user)
             messages.info(request, 'Successful login!')
             return render(request, './home.html')
@@ -33,15 +33,17 @@ def register_user(request):
         username = request.POST['username']
         password = request.POST['password']
         try:
-            user = User.objects.create_user(username=username, password=password)
-            user.save()
+            user = User.objects.create_user(
+                username=username, password=password)
+            user.save()  # Save to database
             messages.info(request, 'Successful Registration!')
-            return render(request, './login.html',{'form': Login()})
+            return render(request, './home.html')
         except:
             messages.info(request, 'Error!')
             return render(request, './register.html', {'form': Register()})
     else:
         return render(request, './register.html', {'form': Register()})
+
 
 @login_required(login_url='/login')
 def sign_out(request):

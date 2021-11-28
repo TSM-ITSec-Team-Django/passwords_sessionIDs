@@ -1,0 +1,3 @@
+User authentication in Django: https://docs.djangoproject.com/en/3.2/topics/auth/
+Password management in Django: https://docs.djangoproject.com/en/3.2/topics/auth/passwords/
+Working with User objects: https://docs.djangoproject.com/en/3.2/topics/auth/default/
