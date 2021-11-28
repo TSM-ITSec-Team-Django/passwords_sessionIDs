@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.admin.views.decorators import staff_member_required
 
 from .forms import Login, Register
 
@@ -54,3 +55,9 @@ def sign_out(request):
     except:
         messages.info(request, 'Error!')
         return render(request, './home.html')
+
+
+@staff_member_required
+def secret(request):
+    messages.info(request, 'This is the secret page!')
+    return render(request, './secret.html')
